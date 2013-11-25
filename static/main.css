@@ -1,0 +1,45 @@
+body {
+  background-color: #000 !important;
+}
+
+#page1 {
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  max-width: 320px;
+}
+
+.ui-controlgroup[data-inline="true"] {
+  display: inline-block;
+}
+
+.ui-btn {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.ui-mini .ui-btn-inner {
+  height: 15px !important;
+}
+
+.ui-content {
+  padding: 5px;
+}
+
+.ui-body {
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.device-config-label {
+  display: block;
+}
