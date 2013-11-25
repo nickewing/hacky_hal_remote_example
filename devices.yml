@@ -10,12 +10,12 @@ av_receiver:
     type: SSDP
     usn: "uuid:5f9ec1b3-ed59-1900-4530-00a0de90e681::upnp:rootdevice"
   default_input: "AV3"
-# roku:
-  # type: "Roku"
-  # device_resolver:
-    # type: SSDP
-    # usn: "uuid:31474d33-3548-5b76-0000-050199040000:upnp:rootdevice"
-  # av_receiver_input: "AV1"
+roku:
+  type: "Roku"
+  device_resolver:
+    type: SSDP
+    usn: "uuid:f85cdaf2-4ae3-907e-97ee-c2035b7ac4ab::upnp:rootdevice"
+  av_receiver_input: "AV1"
 pc:
   type: "LinuxComputer"
   host: "charles"

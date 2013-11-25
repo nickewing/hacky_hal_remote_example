@@ -43,3 +43,13 @@ h3 {
 .device-config-label {
   display: block;
 }
+
+#actions .ui-btn {
+  margin-top: 0;
+  width: 48%;
+}
+
+.ui-btn .ui-btn-inner {
+  padding-left: 6px;
+  padding-right: 6px;
+}

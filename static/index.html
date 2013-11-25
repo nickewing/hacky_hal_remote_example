@@ -40,14 +40,26 @@
       <h3>Power</h3>
       <a href="javascript:remoteFunction('/custom/toggle_av_receiver_power', {})" data-role="button" data-inline="true" data-mini="true">AV Receiver</a>
       <a href="javascript:remoteFunction('/custom/toggle_projector_power', {})" data-role="button" data-inline="true" data-mini="true">Projector</a>
+      <a href="javascript:remoteFunction('/custom/all_off', {})" data-role="button" data-mini="true" data-inline="true">All Off</a>
     </div>
 
-    <div class="ui-body ui-body-a">
-      <a href="javascript:remoteFunction('/custom/all_off', {})" data-role="button" data-mini="true">All Off</a>
-      <a href="javascript:remoteFunction('/custom/laptop_on_both_monitors', {})" data-role="button" data-mini="true">Laptop On Monitors</a>
-      <a href="javascript:remoteFunction('/custom/pc_on_both_monitors', {})" data-role="button" data-mini="true">PC On Monitors</a>
-      <a href="javascript:remoteFunction('/custom/ps3_on_projector', {})" data-role="button" data-mini="true">PS3 On Projector</a>
-      <a href="javascript:remoteFunction('/custom/rain', {})" data-role="button" data-mini="true">Rain</a>
+    <div class="ui-body ui-body-a" id="actions">
+      <div>
+        <a href="javascript:remoteFunction('/custom/laptop_on_both_monitors', {})" data-role="button" data-inline="true" data-mini="true">LT On Monitors</a>
+        <a href="javascript:remoteFunction('/custom/laptop_on_projector', {})" data-role="button" data-inline="true" data-mini="true">LT On Projector</a>
+      </div>
+      <div>
+        <a href="javascript:remoteFunction('/custom/pc_on_both_monitors', {})" data-role="button" data-inline="true" data-mini="true">PC On Monitors</a>
+        <a href="javascript:remoteFunction('/custom/pc_on_projector', {})" data-role="button" data-inline="true" data-mini="true">PC On Projector</a>
+      </div>
+      <div>
+        <a href="javascript:remoteFunction('/custom/ps3_on_projector', {})" data-role="button" data-mini="true" data-inline="true">PS3 On Projector</a>
+        <a href="javascript:remoteFunction('/custom/roku_on_projector', {})" data-role="button" data-mini="true" data-inline="true">Roku On Projector</a>
+      </div>
+      <div>
+        <a href="javascript:remoteFunction('/custom/rain', {})" data-role="button" data-inline="true" data-mini="true">Rain On</a>
+        <a href="javascript:remoteFunction('/custom/rain_off', {})" data-role="button" data-inline="true" data-mini="true">Rain Off</a>
+      </div>
     </div>
 
     <div class="ui-body ui-body-a">

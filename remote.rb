@@ -47,18 +47,32 @@ class Remote
   end
 
   def rain
-    laptop.exec("open 'http://rain.simplynoise.com'")
+    rain_off
+    laptop.exec("open /Applications/SimplyRain.app")
     set_laptop_audio_output_device("RX-A1020 90E681")
     disable_avr_output
-    secondary_monitor_switch.input = secondary_monitor_switch[:unused_input]
+    disable_secondary_screen
     av_receiver.volume = -45.0
     projector.on = false
+  end
+
+  def rain_off
+    laptop.exec('pkill -9 -f ".*SimplyRain.*"')
   end
 
   def all_off
     disable_avr_output
     av_receiver.on = false
+    disable_secondary_screen
     projector.on = false
+  end
+
+  def laptop_on_projector
+    set_input_output(
+      "av_receiver_input" => laptop[:av_receiver_input],
+      "av_receiver_output" => projector[:av_receiver_output],
+      "secondary_monitor_switch_input" => secondary_monitor_switch[:unused_input]
+    )
   end
 
   def laptop_on_both_monitors
@@ -66,6 +80,15 @@ class Remote
       "av_receiver_input" => laptop[:av_receiver_input],
       "av_receiver_output" => primary_monitor[:av_receiver_output],
       "secondary_monitor_switch_input" => laptop[:secondary_monitor_switch_input]
+    )
+  end
+
+  def pc_on_projector
+    projector.on = true
+    set_input_output(
+      "av_receiver_input" => pc[:av_receiver_input],
+      "av_receiver_output" => projector[:av_receiver_output],
+      "secondary_monitor_switch_input" => secondary_monitor_switch[:unused_input]
     )
   end
 
@@ -84,6 +107,19 @@ class Remote
       "av_receiver_output" => projector[:av_receiver_output],
       "secondary_monitor_switch_input" => secondary_monitor_switch[:unused_input]
     )
+  end
+
+  def roku_on_projector
+    projector.on = true
+    set_input_output(
+      "av_receiver_input" => roku[:av_receiver_input],
+      "av_receiver_output" => projector[:av_receiver_output],
+      "secondary_monitor_switch_input" => secondary_monitor_switch[:unused_input]
+    )
+  end
+
+  def disable_secondary_screen
+    secondary_monitor_switch.input = secondary_monitor_switch[:unused_input]
   end
 
   def netflix
