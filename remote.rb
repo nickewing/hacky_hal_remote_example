@@ -8,6 +8,10 @@ class Remote
     define_device_methods
   end
 
+  def set_avr_sound_program(options)
+    av_receiver.sound_program = options["program_name"]
+  end
+
   def set_input_output(options)
     avr_input = options["av_receiver_input"]
     avr_output = options["av_receiver_output"].split(",")

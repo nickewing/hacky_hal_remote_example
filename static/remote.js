@@ -32,7 +32,7 @@ function mute() {
 
 
 
-window.addEventListener("load",function() {
+window.addEventListener("load", function() {
   setTimeout(function(){
     window.scrollTo(0, 1);
   }, 0);
