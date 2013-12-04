@@ -14,7 +14,7 @@ port=4567
 pid_file=/home/pi/remote_server.pid
 log_file=/home/pi/remote_server.log
 
-server_dir=/home/pi/hack_hal_remote/
+server_dir=/home/pi/hacky_hal_remote_example/
 server_script=server.rb
 
 start () {
