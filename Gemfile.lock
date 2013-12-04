@@ -21,7 +21,7 @@ GEM
     eventmachine (1.0.3)
     gyoku (1.1.0)
       builder (>= 2.1.2)
-    hacky_hal (0.2.2)
+    hacky_hal (0.2.3)
       net-ssh (~> 2.6.0)
       serialport (~> 1.1.0)
       upnp-nickewing (~> 0.1.0)

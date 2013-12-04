@@ -29,6 +29,8 @@ class Remote
     set_laptop_audio_output(avr_input, avr_projector_output)
     set_laptop_mirroring(avr_input, switch_input)
 
+    wake_laptop_if_on_any_screen(avr_input, switch_input)
+
     set_pc_mirroring(avr_input, switch_input)
     reset_pc_screens
   end
@@ -69,6 +71,7 @@ class Remote
     av_receiver.on = false
     disable_secondary_screen
     projector.on = false
+    laptop.sleep_display
   end
 
   def laptop_on_projector
@@ -205,6 +208,13 @@ class Remote
       unmirror_laptop_screens
     else
       mirror_laptop_screens
+    end
+  end
+
+  def wake_laptop_if_on_any_screen(avr_input, switch_input)
+    if avr_input == laptop[:av_receiver_input] ||
+        switch_input == laptop[:secondary_monitor_switch_input]
+      laptop.wake_display
     end
   end
 
