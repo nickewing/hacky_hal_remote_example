@@ -11,18 +11,19 @@
 ### END INIT INFO
 
 port=4567
-pid_file=/home/pi/remote_server.pid
-log_file=/home/pi/remote_server.log
+pid_file=/var/run/hacky_hal_server.pid
+log_file=/var/log/hacky_hal_server.log
 
-server_dir=/home/pi/hacky_hal_remote_example/
-server_script=server.rb
+server_dir=/root/hacky_hal_remote_example/
+
+thin=/usr/local/bin/thin
 
 start () {
-  cd $server_dir && sudo -u pi thin --daemonize --port $port --pid $pid_file --log $log_file start
+  cd $server_dir && $thin --daemonize --port $port --pid $pid_file --log $log_file start
 }
 
 stop () {
-  cd $server_dir && sudo -u pi thin --pid $pid_file stop
+  cd $server_dir && $thin --pid $pid_file stop
 }
 
 case "$1" in

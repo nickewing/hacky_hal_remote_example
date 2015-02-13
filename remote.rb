@@ -12,6 +12,18 @@ class Remote
     av_receiver.sound_program = options["program_name"]
   end
 
+  def projector_on
+    projector.on = true
+  end
+
+  def projector_off
+    projector.on = false
+  end
+
+  def toggle_projector_power
+    projector.on = !projector.on
+  end
+
   def set_input_output(options)
     avr_input = options["av_receiver_input"]
     avr_output = options["av_receiver_output"].split(",")
@@ -40,10 +52,6 @@ class Remote
     av_receiver.on = !av_receiver.on
   end
 
-  def toggle_projector_power
-    projector.on = !projector.on
-  end
-
   def increase_volume(options)
     av_receiver.volume += options["amount"].to_i || 1
   end
@@ -59,7 +67,7 @@ class Remote
     disable_avr_output
     disable_secondary_screen
     av_receiver.volume = -45.0
-    projector.on = false
+    projector_off
   end
 
   def rain_off
@@ -70,7 +78,7 @@ class Remote
     disable_avr_output
     av_receiver.on = false
     disable_secondary_screen
-    projector.on = false
+    projector_off
     laptop.sleep_display
   end
 
@@ -91,7 +99,7 @@ class Remote
   end
 
   def pc_on_projector
-    projector.on = true
+    projector_on
     set_input_output(
       "av_receiver_input" => pc[:av_receiver_input],
       "av_receiver_output" => projector[:av_receiver_output],
@@ -108,7 +116,7 @@ class Remote
   end
 
   def ps3_on_projector
-    projector.on = true
+    projector_on
     set_input_output(
       "av_receiver_input" => ps3[:av_receiver_input],
       "av_receiver_output" => projector[:av_receiver_output],
@@ -117,7 +125,7 @@ class Remote
   end
 
   def roku_on_projector
-    projector.on = true
+    projector_on
     set_input_output(
       "av_receiver_input" => roku[:av_receiver_input],
       "av_receiver_output" => projector[:av_receiver_output],

@@ -1,0 +1,45 @@
+#! /bin/bash
+### BEGIN INIT INFO
+# Provides:          ur_server
+# Required-Start:
+# Required-Stop:
+# Should-Start:
+# Default-Start:
+# Default-Stop:
+# Short-Description: Run Unified Remote
+# Description:       Run Unified Remote
+### END INIT INFO
+
+port=4567
+pid_file=/var/run/ur_server.pid
+
+server_dir="/root/urserver"
+
+start () {
+  $server_dir"/urserver" --daemon --pidfile=$pid_file
+}
+
+stop () {
+  kill -KILL $(cat $pid_file)
+}
+
+case "$1" in
+  "")
+    echo "Warning: ur_server should be called with the 'start' argument." >&2
+    start
+    ;;
+  start)
+    start
+    ;;
+  restart|reload|force-reload)
+    stop
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  *)
+    echo "Usage: ur_server [start|stop|restart]" >&2
+    exit 3
+    ;;
+esac

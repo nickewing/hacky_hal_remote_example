@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="volume_up" onVolumeDown="volume_down">
+  <grid>
+    <row>
+      <label text="Power:" />
+    </row>
+    <row>
+      <button text="AV Receiver" onTap="toggle_av_receiver_power" color="black" />
+      <button text="Projector" onTap="toggle_projector_power" color="black" />
+      <button text="All Off" onTap="all_off" color="black" />
+    </row>
+    <row>
+      <label text="Volume:" />
+    </row>
+    <row>
+      <button text="-10" onTap="increase_volume,amount=-10" color="black" />
+      <button icon="vdown" onTap="increase_volume,amount=-1" color="black" />
+      <button icon="vmute" onTap="mute" color="black" />
+      <button icon="vup" text="+10" onTap="increase_volume,amount=1" color="black" />
+      <button text="+10" onTap="increase_volume,amount=10" color="black" />
+    </row>
+    <row>
+      <button text="7ch Stereo" onTap="set_avr_sound_program,program_name=7ch Stereo" color="black" />
+      <button text="Surround Decoder" onTap="set_avr_sound_program,program_name=Surround Decoder" color="black" />
+    </row>
+    <row>
+      <label text="Configurations:" />
+    </row>
+    <row>
+      <button text="LT on Monitors" onTap="laptop_on_both_monitors" color="black" />
+      <button text="LT on Projector" onTap="laptop_on_projector" color="black" />
+    </row>
+    <row>
+      <button text="PC on Monitors" onTap="pc_on_both_monitors" color="black" />
+      <button text="PC on Projector" onTap="pc_on_projector" color="black" />
+    </row>
+    <row>
+      <button text="Roku on Projector" onTap="roku_on_projector" color="black" />
+      <button text="PS3 on Projector" onTap="ps3_on_projector" color="black" />
+    </row>
+    <row>
+      <button text="Rain On" onTap="rain" color="black" />
+      <button text="Rain Off" onTap="rain_off" color="black" />
+    </row>
+  </grid>
+</layout>
